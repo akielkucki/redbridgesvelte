@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.bg-brick-red {
+    background-color: #6b1a01;
+}
+.text-brick-red {
+    color: #bf0000;
+}
