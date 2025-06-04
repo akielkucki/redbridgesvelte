@@ -9,11 +9,13 @@
     import Services from "$lib/Services.svelte";
     import CTA from "$lib/CTA.svelte";
     import Contact from "$lib/Contact.svelte";
+    import {contactMessage} from "$lib/state.svelte.js";
 
     const bubble = createBubbler();
 
     // State management
     let selectedProject = $state(null);
+    let projectToContactAbout = $state("");
     let openModal = $state(false);
     let currentImageIndex = $state(0);
     let modalRef = $state();
@@ -168,6 +170,13 @@
             }, {duration: 5, repeat: Infinity, delay: i});
         });
     });
+
+    function selectProjectToContact(selectedProject) {
+        projectToContactAbout = selectedProject.title;
+        openModal = false;
+        scrollToSection('#contact');
+        contactMessage.message = "I'm interested in working with you on a project called \"" + projectToContactAbout + "\"."
+    }
 </script>
 
 <svelte:head>
@@ -182,13 +191,13 @@
 <Navbar scrollToSection={scrollToSection}/>
 
 <!-- Hero Section -->
-<Hero bind:this={heroRef} class="hero-will-change"/>
+<Hero bind:this={heroRef} class="hero-will-change" {scrollToSection}/>
 
 <!-- About Section -->
-<About bind:this={aboutRef}/>
+<About bind:this={aboutRef} {scrollToSection}/>
 
 <!-- Services Section -->
-<Services bind:this={servicesRef}/>
+<Services bind:this={servicesRef} {scrollToSection} />
 
 <!-- Projects Section -->
 <section id="projects" class="py-20 bg-gray-50">
@@ -222,7 +231,6 @@
     </div>
 </section>
 
-<CTA/>
 
 <!-- Contact Section -->
 <Contact bind:this={contactRef}/>
@@ -316,7 +324,9 @@
                         </ul>
                     </div>
                     <div class="pt-4 border-t border-gray-200">
-                        <button class="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-lg">
+                        <button class="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-lg"
+                            onclick={() => selectProjectToContact(selectedProject)}
+                        >
                             Contact About This Project
                         </button>
                     </div>

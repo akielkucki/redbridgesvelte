@@ -5,9 +5,9 @@ import { verifyAccessToken, verifyRefreshToken, generateTokens, setTokenCookies 
  * @type {import('@sveltejs/kit').Handle}
  */
 export async function handle({ event, resolve }) {
-    const accessToken  = event.cookies.get('accessToken');
+    const accessToken  = event.cookies.get('accessToken')
     let user = accessToken && verifyAccessToken(accessToken);
-
+    console.log(event)
     // if access token expired but we have a valid refresh, rotate it
     if (!user) {
         const refreshToken = event.cookies.get('refreshToken');
@@ -29,4 +29,7 @@ export async function handle({ event, resolve }) {
     event.locals.user = user ?? null;
 
     return resolve(event);
+}
+function log(event) {
+    console.log(event);
 }

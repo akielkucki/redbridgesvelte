@@ -1,7 +1,8 @@
 <script>
-    import { onMount } from 'svelte';
-    import { animate } from 'motion';
-    import { MapPin, Phone, Mail, Clock } from 'lucide-svelte';
+    import {onMount} from 'svelte';
+    import {animate} from 'motion';
+    import {Clock, Mail, MapPin, Phone} from 'lucide-svelte';
+    import {contactMessage} from "$lib/state.svelte.js";
 
     let scrollToSection; // if you need to scroll from parent
 
@@ -16,6 +17,9 @@
     let phone     = $state('');
     let service   = $state('');
     let message   = $state('');
+    $effect(()=> {
+        message = contactMessage.message;
+    })
 
     const infoItems = [
         { icon: MapPin, label: 'Office', value: '231 Red Bridge Rd Kintnersville, PA 18930' },
@@ -195,7 +199,7 @@
     });
 </script>
 
-<section id="contact" bind:this={contactRef} class="py-20 bg-white">
+<section id="contact" bind:this={contactRef} class="py-20 bg-white z-10">
     <div class="max-w-[90vw] lg:max-w-[80vw] mx-auto px-4 grid md:grid-cols-2 gap-12">
         <!-- Contact Info -->
         <div>
@@ -206,7 +210,7 @@
                 {#each infoItems as item}
                     <div class="flex items-start mb-6">
                         <div class="mr-4 bg-red-50 p-3 rounded-full">
-                            <svelte:component this={item.icon} class="w-6 h-6 text-red-600" />
+                            <item.icon class="w-6 h-6 text-red-600" />
                         </div>
                         <div>
                             <h4 class="font-semibold text-lg text-gray-700">{item.label}</h4>
@@ -234,7 +238,7 @@
                 </div>
             {/if}
 
-            <form class="space-y-5" on:submit={onsubmit}>
+            <form class="space-y-5" {onsubmit}>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input
                             type="text"
@@ -289,8 +293,8 @@
                 <button
                         type="submit"
                         class="w-full py-3 bg-red-800 hover:bg-red-700 text-white font-bold rounded-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                        on:mouseenter={handleButtonHover}
-                        on:mouseleave={handleButtonLeave}
+                        onmouseenter={handleButtonHover}
+                        onmouseleave={handleButtonLeave}
                         disabled={submitted}
                 >
                     {submitted ? '✓ Message Sent!' : 'Send Message'}

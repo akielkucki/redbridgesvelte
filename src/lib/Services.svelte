@@ -6,6 +6,7 @@
 
     let servicesRef;
     let hasAnimated = false;
+    let {scrollToSection} = $props()
 
     const services = [
         {
@@ -215,6 +216,7 @@
         <div class="cta-section opacity-0 text-center">
             <button
                     class="bg-red-800 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold shadow-lg rounded-md hover:scale-105 transition-transform"
+                    onclick={scrollToSection("#contact")}
             >
                 Discuss Your Project
                 <ArrowRight class="ml-2 h-5 w-5 inline transition-transform group-hover:translate-x-1" />

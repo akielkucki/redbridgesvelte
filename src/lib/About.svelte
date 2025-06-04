@@ -139,7 +139,7 @@
                 <!-- CTA buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 pt-6">
                     <button
-                            on:click={() => scrollToSection && scrollToSection('#services')}
+                            on:click={() => scrollToSection && scrollToSection('#contact')}
                             class="bg-gradient-to-r from-red-600 to-red-800 text-white px-8 py-4 font-semibold rounded-lg transition-transform hover:scale-105 hover:from-red-700 hover:to-red-900"
                     >
                         Contact Us

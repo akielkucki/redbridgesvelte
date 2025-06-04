@@ -60,14 +60,16 @@
         aria-label="Hero section introducing Red Bridge Construction"
 >
     <!-- Background -->
-    <div class="absolute inset-0 z-0 ">
+    <div class="absolute inset-0 z-0">
 
-        <div
-                class="absolute inset-0 bg-cover bg-center bg-fixed"
-                style="background-image: url('/background.png'); filter: brightness(0.9) contrast(1.1);"
-                role="img"
+        <img
+                src="/background.png"
+                alt="background"
+                class="absolute inset-0 w-full h-full object-cover object-center -z-10"
                 aria-label="Construction site backdrop"
-        ></div>
+                style="filter: brightness(0.9) contrast(1.1); z-index: -1;"
+        />
+
         <div class="absolute inset-0 bg-gradient-to-br from-black/30 via-black/10 to-red-900/30"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
     </div>
