@@ -6,6 +6,7 @@ const resend = new Resend(RESEND_API_KEY);
 
 const allowedOrigins = [
     'https://redbridgeconstructionllc.com',
+    'https://www.redbridgeconstructionllc.com',
     'http://localhost:5173',
     'http://localhost:3000'
 ];
