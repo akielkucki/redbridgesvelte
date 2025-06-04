@@ -56,7 +56,7 @@
         <div class="grid lg:grid-cols-2 gap-16">
             <!-- Image block -->
             <div
-                    class="transition-all duration-700 ease-out opacity-0 translate-x-12"
+                    class="transition-all duration-700 ease-out opacity-0 translate-x-0 lg:translate-x-12"
                     class:opacity-100={show}
                     class:translate-x-0={show}
             >
@@ -64,8 +64,7 @@
                     <img
                             src="/about.jpg"
                             alt="Construction team at work"
-                            width="640"
-                            height="384"
+
                             loading="lazy"
                             decoding="async"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

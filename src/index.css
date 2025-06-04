@@ -6,3 +6,6 @@
 .text-brick-red {
     color: #bf0000;
 }
+body,html {
+    overflow-x: hidden;
+}
