@@ -67,7 +67,7 @@
 
 <header
         bind:this={navRef}
-        class="fixed w-full z-50 transition-all duration-700"
+        class={`fixed w-full z-50 transition-all duration-700`}
         style="background-color: rgba(255, 255, 255, {backgroundOpacity}); backdrop-filter: blur({backgroundBlur}px);"
 >
     <!-- Enhanced backdrop blur and border -->
