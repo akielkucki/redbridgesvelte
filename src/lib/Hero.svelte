@@ -138,12 +138,12 @@
                 </button>
             </div>
 
-            <button class="text-white px-4 py-4 md:py-8 transition-all hover:scale-105">
-                <div class="w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110">
-                    <Play class="w-3 h-3 md:w-4 md:h-4 text-white" />
-                </div>
-                <span class="text-sm md:text-base">Watch Our Story</span>
-            </button>
+<!--            <button class="text-white px-4 py-4 md:py-8 transition-all hover:scale-105">-->
+<!--                <div class="w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110">-->
+<!--                    <Play class="w-3 h-3 md:w-4 md:h-4 text-white" />-->
+<!--                </div>-->
+<!--                <span class="text-sm md:text-base">Watch Our Story</span>-->
+<!--            </button>-->
         </div>
 
         <!-- Trust indicators -->
