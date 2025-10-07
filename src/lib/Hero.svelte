@@ -159,7 +159,6 @@
         </div>
     </div>
 
-    <!-- Scroll Indicator -->
     <button
             on:click={() => scrollToSection('#about')}
             class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center text-white/70 hover:text-white transition-colors animate-bounce"
